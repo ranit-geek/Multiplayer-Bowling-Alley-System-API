@@ -79,7 +79,12 @@ console.log(req.body)
       "current_score": ele.points
   })
   })
-  res.status(200)
+  if(player[0]["setNumber"]  >10){
+    res.status(409)
+  }else{
+    res.status(200)
+  }
+  
   res.send(response)
 
 })
